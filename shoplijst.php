@@ -138,19 +138,27 @@
 	function editDouble(obj, index) {
 		let innerText2 = obj.innerText
 		obj.outerHTML = `<input type="text" placeholder="${innerText2}" onchange="Change(${index}, this)" autofocus>`
+		$(obj).focus()
 	}
 
 	function edit(value) {
 		let myValue = $(`#${value}`)
 		let innerText2 = $(myValue[0].firstElementChild)[0].innerText
-		$(myValue[0].firstElementChild).empty() 
+		$(myValue[0].firstElementChild).empty()
 		$(myValue[0].firstElementChild).append(`<input type="text" placeholder="${innerText2}" onchange="Change(${value}, this)">`) 
 	}
 
 	function Change(index, obj) {
 		if($.inArray($(obj).val(), myArray) >= 0) {
+			swal({
+			  title: "you kiddin?",
+			  text: "Can't add two of the same items.",
+			  icon: "warning",
+			  dangerMode: true,
+			})
 			return
 		}
+		if($(obj).val() == ""){return}
 		let = oldVal = myArray[index]
 		myArray[index] = $(obj).val()
 		generatelist()
@@ -175,7 +183,8 @@
 		  title: "Are you sure?",
 		  text: "Once deleted, you will not be able to recover this item.",
 		  icon: "warning",
-		  buttons: true,
+		  buttons: ["No keep my item.", "Yes, delete!"],
+		  confirmButtonText: 'Yes, I am sure!',
 		  dangerMode: true,
 		})
 		.then((willDelete) => {
@@ -193,7 +202,7 @@
 		  title: "Are you sure?",
 		  text: "Once deleted, you will not be able to recover this list.",
 		  icon: "warning",
-		  buttons: true,
+		  buttons: ["No keep my items.", "Yes, delete my items!"],
 		  dangerMode: true,
 		})
 		.then((willDelete) => {
