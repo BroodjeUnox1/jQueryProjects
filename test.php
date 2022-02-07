@@ -51,7 +51,7 @@ foreach($myCoins as $coin) {
 <body>
 <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
           .path-0{
-            animation:pathAnim-0 1s;
+            animation:pathAnim-0 4s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
           }
@@ -73,7 +73,7 @@ foreach($myCoins as $coin) {
             }
           }</style><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#002bdc88"></stop><stop offset="95%" stop-color="#32ded488"></stop></linearGradient></defs><path d="M 0,600 C 0,600 0,200 0,200 C 139.06666666666666,214 278.1333333333333,228 462,238 C 645.8666666666667,248 874.5333333333333,254 1045,247 C 1215.4666666666667,240 1327.7333333333333,220 1440,200 C 1440,200 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><style>
           .path-1{
-            animation:pathAnim-1 1s;
+            animation:pathAnim-1 4s;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
           }
@@ -106,6 +106,11 @@ foreach($myCoins as $coin) {
 
 
 <script type="text/javascript">
+let myarray = []
+
+for (var i = 0; i < 10000; i++) {
+  myarray.push(i)
+}
 
 </script>
  
