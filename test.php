@@ -95,8 +95,8 @@ foreach($myCoins as $coin) {
 <body>
     <div class="nav">
         <div class="row">
-            <div class="col-md-2">
-                <h1>Logo</h1>
+            <div class="">
+                <h1>Logo - navbar</h1>
             </div>
         </div>
     </div>
